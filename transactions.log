@@ -1,0 +1,30 @@
+2023-11-22 03:37:11 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob cad usd 1002023-11-22 03:37:11 INFO  TransactionProcessor:134 - Transaction processed successfully: Susan cad eur 202023-11-22 03:37:11 WARN  InsufficientFundsException:48 - InsufficientFundsException: Insufficient 'usd' currency for transaction: Tommy usd usd 10002023-11-22 03:37:11 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob usd hkd 302023-11-22 03:37:11 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob hkd krw 1842023-11-22 03:37:11 INFO  TransactionProcessor:174 - Updated 'updatedUsers.json' successfully2023-11-22 03:37:38 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob cad usd 100
+2023-11-22 03:37:38 INFO  TransactionProcessor:134 - Transaction processed successfully: Susan cad eur 20
+2023-11-22 03:37:38 WARN  InsufficientFundsException:48 - InsufficientFundsException: Insufficient 'usd' currency for transaction: Tommy usd usd 1000
+2023-11-22 03:37:38 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob usd hkd 30
+2023-11-22 03:37:38 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob hkd krw 184
+2023-11-22 03:37:38 INFO  TransactionProcessor:174 - Updated 'updatedUsers.json' successfully
+2023-11-22 03:37:48 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob cad usd 100
+2023-11-22 03:37:48 INFO  TransactionProcessor:134 - Transaction processed successfully: Susan cad eur 20
+2023-11-22 03:37:48 WARN  InsufficientFundsException:48 - InsufficientFundsException: Insufficient 'usd' currency for transaction: Tommy usd usd 1000
+2023-11-22 03:37:48 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob usd hkd 30
+2023-11-22 03:37:48 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob hkd krw 184
+2023-11-22 03:37:48 INFO  TransactionProcessor:174 - Updated 'updatedUsers.json' successfully
+2023-11-22 03:38:18 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob cad usd 100
+2023-11-22 03:38:18 INFO  TransactionProcessor:134 - Transaction processed successfully: Susan cad eur 20
+2023-11-22 03:38:18 WARN  InsufficientFundsException:48 - InsufficientFundsException: Insufficient 'usd' currency for transaction: Tommy usd usd 1000
+2023-11-22 03:38:18 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob usd hkd 30
+2023-11-22 03:38:18 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob hkd krw 184
+2023-11-22 03:38:18 INFO  TransactionProcessor:174 - Updated 'updatedUsers.json' successfully
+2023-11-22 03:38:22 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob cad usd 100
+2023-11-22 03:38:22 INFO  TransactionProcessor:134 - Transaction processed successfully: Susan cad eur 20
+2023-11-22 03:38:22 WARN  InsufficientFundsException:48 - InsufficientFundsException: Insufficient 'usd' currency for transaction: Tommy usd usd 1000
+2023-11-22 03:38:22 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob usd hkd 30
+2023-11-22 03:38:22 INFO  TransactionProcessor:134 - Transaction processed successfully: Bob hkd krw 184
+2023-11-22 03:38:22 INFO  TransactionProcessor:174 - Updated 'updatedUsers.json' successfully
+2023-11-22 03:43:27 INFO  TransactionProcessor:131 - Transaction processed successfully: Bob cad usd 100
+2023-11-22 03:43:27 INFO  TransactionProcessor:131 - Transaction processed successfully: Susan cad eur 20
+2023-11-22 03:43:27 WARN  InsufficientFundsException:16 - InsufficientFundsException: Insufficient 'usd' currency for transaction: Tommy usd usd 1000
+2023-11-22 03:43:27 INFO  TransactionProcessor:131 - Transaction processed successfully: Bob usd hkd 30
+2023-11-22 03:43:27 INFO  TransactionProcessor:131 - Transaction processed successfully: Bob hkd krw 184
+2023-11-22 03:43:27 INFO  TransactionProcessor:171 - Updated 'updatedUsers.json' successfully

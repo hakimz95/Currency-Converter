@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- File Appender for transactions.log -->
+        <File name="FileAppender" fileName="transactions.log" append="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+            <immediateFlush>true</immediateFlush>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!-- Root Logger -->
+        <Root level="debug">
+            <AppenderRef ref="FileAppender"/>
+        </Root>
+
+        <!-- Custom Loggers -->
+        <Logger name="TransactionLogger" level="info" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <Logger name="ConversionRateNotFoundException" level="warn" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <Logger name="InsufficientFundsException" level="warn" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <Logger name="InvalidCurrencyException" level="warn" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+
+        <Logger name="UserNotFoundExceptionLogger" level="warn" additivity="false">
+            <AppenderRef ref="FileAppender"/>
+        </Logger>
+    </Loggers>
+</Configuration>

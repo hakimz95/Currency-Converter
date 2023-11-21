@@ -6,10 +6,10 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,6 +23,9 @@ import com.fdmgroup.CurrencyConverter.CustomException.UserNotFoundException;
  * Represents the TransactionProcessor class
  */
 public class TransactionProcessor {
+	
+	private static final Logger logger = LogManager.getLogger(TransactionProcessor.class);
+
 
 	private List<User> users;
 	private Converter currencyConverter;
@@ -69,23 +72,15 @@ public class TransactionProcessor {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
-//		// Print users and their wallet details
-//		for (UserProfile user : users) {
-//			System.out.println("User: " + user.getName());
-//			System.out.println("Wallet:");
-//			user.getWallet().forEach((currency, balance) -> System.out.println(currency + ": " + balance));
-//			System.out.println();
-//		}
 	}
 
 	/**
 	 * Responsible for processing a transaction specified by a String input Splits
 	 * the 'transaction' string into parts to extract name, fromCurrency, toCurrency
 	 * and amount. Finds 'UserProfile' corresponding to the username Check if user
-	 * exists, if yes proceed with transaction. Checks if fromCurrency and toCurrency
-	 * is valid. Checks if balance is sufficient, if yes carry out the convert method
-	 * from Convert class
+	 * exists, if yes proceed with transaction. Checks if fromCurrency and
+	 * toCurrency is valid. Checks if balance is sufficient, if yes carry out the
+	 * convert method from Convert class
 	 * 
 	 * @param transaction
 	 * @throws UserNotFoundException
@@ -133,16 +128,9 @@ public class TransactionProcessor {
 			user.updateBalance(toCurrency, newToCurrencyBalance);
 
 			try {
-				FileHandler fileHandler = new FileHandler("transactions.log", true);
-				Logger logger = Logger.getLogger("TransactionLogger");
-				logger.addHandler(fileHandler);
-				SimpleFormatter formatter = new SimpleFormatter();
-				fileHandler.setFormatter(formatter);
-
-				logger.info("Transaction processed successfully: " + transaction);
-				fileHandler.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			    logger.info("Transaction processed successfully: {}", transaction);
+			} catch (Exception e) {
+			    e.printStackTrace();
 			}
 		} catch (ConversionRateNotFoundException e) {
 			throw new InvalidCurrencyException("Conversion rate not found for transaction: " + transaction);
@@ -160,7 +148,7 @@ public class TransactionProcessor {
 			DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
 			for (User user : users) {
-				JSONObject userObject = new JSONObject();
+				JSONObject userObject = new JSONObject(new LinkedHashMap<>());
 				userObject.put("name", user.getName());
 
 				JSONObject walletObject = user.getWalletAsJSONObject();
@@ -180,16 +168,9 @@ public class TransactionProcessor {
 			fileWriter.close();
 			
 			try {
-				FileHandler fileHandler = new FileHandler("transactions.log", true);
-				Logger logger = Logger.getLogger("TransactionLogger");
-				logger.addHandler(fileHandler);
-				SimpleFormatter formatter = new SimpleFormatter();
-				fileHandler.setFormatter(formatter);
-
-				logger.info(">>> Updated 'updatedUsers.json' successfully: ");
-				fileHandler.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			    logger.info("Updated 'updatedUsers.json' successfully");
+			} catch (Exception e) {
+			    e.printStackTrace();
 			}
 		} catch (IOException e) {
 			e.printStackTrace();

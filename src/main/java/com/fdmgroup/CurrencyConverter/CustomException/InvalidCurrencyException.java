@@ -1,31 +1,18 @@
 package com.fdmgroup.CurrencyConverter.CustomException;
 
-import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-/**
- * Custom exception class for when an invalid value is input as the currency
- */
 public class InvalidCurrencyException extends Exception {
+
+	private static final Logger logger = LogManager.getLogger(InvalidCurrencyException.class);
+
 	public InvalidCurrencyException(String message) {
 		super(message);
 		logError(message);
 	}
-	
-	private void logError(String message) {
-        try {
-            FileHandler fileHandler = new FileHandler("error.log", true);
-            Logger logger = Logger.getLogger("UserNotFoundExceptionLogger");
-            logger.addHandler(fileHandler);
-            SimpleFormatter formatter = new SimpleFormatter();
-            fileHandler.setFormatter(formatter);
 
-            logger.warning("UserNotFoundException: " + message);
-            fileHandler.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+	private void logError(String message) {
+		logger.warn("InvalidCurrencyException: {}", message);
+	}
 }
